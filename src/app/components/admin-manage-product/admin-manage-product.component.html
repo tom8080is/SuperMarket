@@ -1,0 +1,89 @@
+<div class="manageProduct-div animated fadeInLeft">
+  <div style="text-align: center; margin-top: 20px;">
+    <h3>Admin Panel <i class="fas fa-wrench"></i></h3>
+  </div>
+  <div class="closeManage-div">
+    <button class="closeManage-btn" mdbBtn style="margin-left: 20px; background-color: rgba(139, 0, 0, 0.513); border-radius: 99px;" (click)="onCloseManageClick()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </div>
+
+  <div class="editDiv manage"  *ngIf="stateService.isManageProductClicked">
+    <h5 *ngIf="this.stateService.productToEdit">Edit Product:</h5>
+    <h5 *ngIf="!this.stateService.productToEdit">Add Product:</h5>
+    
+    <label> Name:</label>
+    <input
+      type="text"
+      class="input-group"
+      value="{{ stateService.productToEdit.productName }}"
+      [(ngModel)]="productName"
+    />
+    
+    <label> Price:</label>
+    <input
+    class="input-group"
+      type="number"
+      mdbInput
+      value="{{ stateService.productToEdit.price }}"
+      [(ngModel)]="price"
+    />
+    <label> Category:</label>
+    <select
+      (change)="onOptionSelected($event)"
+      class="browser-default input-group custom-select"
+    >
+      <option selected disabled hidden>
+        {{ this.stateService.productToEdit.categoryName }}
+      </option>
+      <option
+        *ngFor="let category of stateService.categories"
+        [value]="category.categoryId"
+      >
+        {{ category.categoryName }}
+      </option>
+    </select>
+
+    <label> Image:</label>
+    <input
+    class="input-group"
+      type="text"
+      value="{{ stateService.productToEdit.image }}"
+      [(ngModel)]="image"
+    />
+    <div class="error-div" *ngIf="stateService.isServerError">
+      *{{ stateService.serverError }}
+    </div>
+    <div class="btnsDiv">
+    <button mdbBtn
+      class="manage-btns save-btn"
+      (click)="onUpdateProductClick()"
+      *ngIf="this.stateService.productToEdit"
+      color="light"
+      style="border-radius: 99px;"
+    >
+      Save
+      <i style="margin-left: 15px; font-size: 15px" class="far fa-save"></i>
+    </button>
+    <button mdbBtn
+      class="manage-btns add-btn"
+      (click)="onAddNewProductClick()"
+      *ngIf="!this.stateService.productToEdit"
+      style="background-color: rgba(13, 87, 6, 0.513); border-radius: 99px;"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+    
+
+    <button mdbBtn
+    color="light"
+      class="manage-btns addProd-btn"
+      *ngIf="this.stateService.productToEdit"
+      (click)="onClearInputs() "
+     style="border-radius: 99px;"
+    >
+      Add product <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="parent container-fluid">
+  <div class="left-div" *ngIf="!this.stateService.isLoggedIn">
+    <app-login></app-login>
+  </div>
+  <div class="left-div" *ngIf="this.stateService.isLoggedIn">
+    <p>
+      Welcome Back <b>{{ username.toUpperCase() }} !</b>
+    </p>
+    <a *ngIf="!this.stateService.isAdmin" href="home">Continue Shopping</a>
+    <a *ngIf="this.stateService.isAdmin" href="home">Go Manage</a>
+
+  </div>
+
+  <div class="middle-div">
+    <h1 class="h1-responsive font-weight-bold" style="text-align: center;">Welcome to ToMarket </h1>
+    <hr class="hr-light" />
+    <h6 class="mb-3">
+    
+      <b>
+        Tomarket offers a full-service supermarket with everything consumers have come to expect from a grocer while never
+        forgetting our "Every Day Low Wharehouse Pricing" roots.<br> Shoppers offers big savings with exclusive discounts
+        and coupons through the Shoppers app. .<br>Today, grocery shopping at Shoppers has never been easier with online
+        grocery shopping, including grocery delivery and store pickup!.<br> Tomarket.com offers thousands of grocery and
+        household items, .<br> such as fresh produce, meat and seafood, deli and bakery, Quick and Easy Meals, healthy
+        natural and organic food products,.<br> including gluten-free and other free-from options, and so much more – all at
+        a great value. .<br> Tomarket is proud to serve the Isreal markets
+        </b>
+    </h6>
+
+  </div>
+  <div class="right-div">
+    <p>
+      
+      available product in our store :<b>{{ totalProduct }}</b>
+    </p>
+    
+    <p>
+      <b>{{ totalOrders }}</b> orders have been submitted in our store.
+    </p>
+    <p *ngIf="this.stateService.isLoggedIn && !this.stateService.isAdmin">
+      You have Opened Cart with total of :
+      <b>{{ stateService.getTotal() | currency: "ILS" }}</b>
+    </p>
+    
+  </div>
+</div>

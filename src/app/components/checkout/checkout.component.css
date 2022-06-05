@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
+
+
+
+label {
+  display: block;
+  text-align: initial;
+}
+.checkout-page {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+#search-text {
+  background: #dbdbdb;
+  width: 240px;
+}
+
+.returnMarket-btn {
+
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: 10px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+width: 120px;
+  margin-left: 80%;
+text-align: center;
+  transition: 0.4s ease-out;
+}
+
+.returnMarket-btn:hover {
+  background-position: left;
+  color: #c22121;
+  background-color: white;
+}
+
+.checkout-btn {
+  cursor: pointer;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  background-color: rgb(195,51,77);
+  background: linear-gradient(to left, rgb(195,51,77) 50%, rgb(199, 88, 109) 50%) right;
+  background-size: 200%;
+  transition: 0.4s ease-out;
+}
+
+.checkout-btn:hover {
+  background-position: left;
+  color: rgb(195,51,77);
+  background-color: white;
+}
+.checkout-form{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+.inputs-div{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+text-align: center;
+background-color: rgba(196, 203, 203, 0.743);
+width: 80%;
+padding: 50px;
+margin-left: 10%;
+margin-bottom: 10%;
+margin-top: 50px;
+border-radius: 50px;
+box-shadow: -9px 7px 24px 3px rgba(0, 0, 0, 0.13);
+}
+.shipping-form {
+  background-color: #ebf1eb;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  text-align: center;
+  margin: 3rem 2rem;
+}
+
+
+
+.highlight {
+  background-color: rgb(233, 69, 99)(0, 255, 136);
+}
+
+.error-border {
+  border: 2px solid red;
+}
+
+@media (max-width: 1000px) {
+  .checkout-page {
+    flex-direction: column;
+  }
+  .shipping-form {
+    align-items: center;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 750px) {
+  select,
+  input {
+    width: 10rem;
+  }
+}

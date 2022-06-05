@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.afterCheckout-div {
+  font-family: 'Roboto', sans-serif;
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.afterCheckout-body {
+
+background-color: rgba(196, 203, 203, 0.562);
+backdrop-filter: blur(5px);
+
+z-index: 100;
+border-radius: 50px;
+box-shadow: -9px 7px 24px 3px rgba(0, 0, 0, 0.13);
+  width: 60%;
+margin-top: 40px;
+  padding: 10px 30px;
+  height: 25rem;
+
+}
+.header-icon {
+      text-align: center;
+    font-size: 4rem;
+    color: #d51c4a;
+}

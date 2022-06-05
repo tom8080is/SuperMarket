@@ -1,0 +1,23 @@
+<div class="container afterCheckout-div">
+
+
+  <div class="afterCheckout-body">
+
+
+      <h3>Thank you for your order! <span style="color: rgb(95, 158, 0);"><i  class="far fa-check-circle"></i></span></h3>
+  
+      <p>
+       Click here to download invoice:
+        <button mdbBtn style="border-radius: 99px;color:rgb(0, 0, 0);background-color: rgba(154, 250, 9, 0.726);"  (click)=getfile()>Download</button>
+      </p>
+   
+    <h5>Order number:</h5>
+    <p>#{{ stateService.currentOrder }}</p>
+    <h5>Order Status:</h5>
+    <p>Order has been received to our store.</p>
+    <h5>Contact us for info:</h5>
+    <p>blabla@gmail.com</p>
+    <a href="/landingPage">Continue Shopping </a>
+  </div>
+</div>
+

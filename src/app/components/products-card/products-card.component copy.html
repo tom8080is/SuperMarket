@@ -1,0 +1,41 @@
+<div class="card productsCard">
+  <img
+    [src]="product.image"
+    alt="{{ product.productName }}"
+    width="250px"
+    class="card-img-top"
+  />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ product.productName | titlecase }}</h5>
+    <p class="card-text">{{ product.price | currency: "ILS" }}</p>
+  </div>
+  <div class="card-footer">
+    <a
+      *ngIf="!isAddToCartBtnClicked && !this.stateService.isAdmin"
+      class="btn btn-primary btn-block"
+      (click)="isAddToCartBtnClicked = true"
+      >ADD</a
+    >
+    <a
+      *ngIf="!isAddToCartBtnClicked && this.stateService.isAdmin"
+      class="btn btn-primary btn-block"
+      (click)="onEditClick(product)"
+      (click)="this. = true"
+      >Manage</a
+    >
+    <div *ngIf="isAddToCartBtnClicked">
+      <div>
+        Amount:<input
+          type="number"
+          min="1"
+          onkeydown="return false"
+          [(ngModel)]="amount"
+          #itemAmount
+        />
+      </div>
+      <button [value]="amount" (click)="onOkClick(product)">Ok</button>
+      <button (click)="isAddToCartBtnClicked = false">Cancel</button>
+    </div>
+  </div>
+</div>
