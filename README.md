@@ -1,7 +1,3 @@
-# Supermarket
-Description
-Final project for John bryce in angular, using MySQL and NodeJs.
-Virtual shopping website with list of products and shopping cart, verification of login and register for users.
 
 # Description:
 This is my final project for John bryce in angular.
